@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vệ Sinh Máy Lạnh Biên Hòa - Giá Rẻ, Tận Nơi</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0057FF;
+    --blue-dark: #003FCC;
+    --blue-light: #E8F0FF;
+    --orange: #FF6B00;
+    --text: #111827;
+    --text-muted: #6B7280;
+    --white: #ffffff;
+    --border: #E5E7EB;
+  }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--text);
+    background: #F9FAFB;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0057FF 0%, #003FCC 100%);
+    color: white;
+    padding: 60px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 span {
+    color: #FFD166;
+  }
+
+  .hero p {
+    font-size: 17px;
+    opacity: 0.9;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFD166;
+  }
+
+  .hero-stat span {
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(255,107,0,0.5);
+  }
+
+  .btn-note {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 56px 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    font-size: 15px;
+  }
+
+  /* WHY */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+  }
+
+  .why-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .why-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .why-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .why-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* PRICE */
+  .price-section {
+    background: var(--blue-light);
+    padding: 56px 20px;
+  }
+
+  .price-table {
+    max-width: 560px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+
+  .price-row:last-child {
+    border-bottom: none;
+  }
+
+  .price-row:first-child {
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+  }
+
+  .price-amount {
+    font-weight: 700;
+    color: var(--blue);
+    font-size: 16px;
+  }
+
+  .price-row:first-child .price-amount {
+    color: #FFD166;
+  }
+
+  .price-note {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* PROCESS */
+  .process-steps {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* FORM */
+  .form-section {
+    background: var(--blue);
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .form-section .section-title {
+    color: white;
+  }
+
+  .form-section .section-sub {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .form-box {
+    max-width: 480px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+    background: #F9FAFB;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--blue);
+    background: white;
+  }
+
+  .form-group textarea {
+    height: 90px;
+    resize: none;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+  }
+
+  .btn-submit:hover {
+    background: #e05e00;
+    transform: translateY(-1px);
+  }
+
+  .form-guarantee {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* SUCCESS */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .success-msg h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .success-msg p {
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 13px;
+  }
+
+  /* FLOATING CTA */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--orange);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.4);
+    z-index: 100;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(255,107,0,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(255,107,0,0.7); }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 48px 16px 64px; }
+    .hero-stats { gap: 24px; }
+    .form-box { padding: 24px 18px; }
+    .floating-cta { bottom: 16px; right: 16px; font-size: 14px; padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  ⚡ Phục vụ tận nơi trong 60 phút — Gọi ngay: <strong>0568528937</strong>
+</div>
+
+<section class="hero">
+  <div class="hero-badge">✓ Kỹ thuật viên có mặt trong 60 phút</div>
+  <h1>Vệ Sinh Máy Lạnh<br><span>Tại Biên Hòa</span></h1>
+  <p>Máy lạnh kém lạnh, hôi mốc, tốn điện? Đội kỹ thuật của chúng tôi xử lý nhanh, sạch triệt để, bảo hành 30 ngày.</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <strong>500+</strong>
+      <span>Khách hàng đã dùng</span>
+    </div>
+    <div class="hero-stat">
+      <strong>4.9★</strong>
+      <span>Đánh giá trung bình</span>
+    </div>
+    <div class="hero-stat">
+      <strong>30 ngày</strong>
+      <span>Bảo hành dịch vụ</span>
+    </div>
+  </div>
+
+  <a href="#form" class="btn-primary">Đặt Lịch Ngay — Miễn Phí</a>
+  <span class="btn-note">Không mất phí đặt lịch • Báo giá trước khi làm</span>
+</section>
+
+<!-- WHY -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Tại sao chọn chúng tôi?</h2>
+    <p class="section-sub">Hơn 500 khách hàng ở Biên Hòa đã tin tưởng dịch vụ của chúng tôi</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Nhanh chóng</h3>
+        <p>Có mặt trong 60 phút kể từ khi đặt lịch, làm xong trong 45–90 phút</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>Giá minh bạch</h3>
+        <p>Báo giá trước khi làm, không phát sinh chi phí ngoài, không bắt chẹt</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>Bảo hành 30 ngày</h3>
+        <p>Cam kết bảo hành sau dịch vụ, có vấn đề gọi lại miễn phí</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>Thợ lành nghề</h3>
+        <p>Kỹ thuật viên kinh nghiệm 5+ năm, xử lý được mọi loại máy lạnh</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price-section">
+  <div class="container">
+    <h2 class="section-title">Bảng giá dịch vụ</h2>
+    <p class="section-sub">Giá cố định, minh bạch — không tính thêm phụ phí</p>
+    <div class="price-table">
+      <div class="price-row">
+        <span>Dịch vụ</span>
+        <span class="price-amount">Giá</span>
+      </div>
+      <div class="price-row">
+        <span>Vệ sinh máy lạnh 1–1.5 HP</span>
+        <span class="price-amount">150.000đ</span>
+      </div>
+      <div class="price-row">
+        <span>Vệ sinh máy lạnh 2 HP</span>
+        <span class="price-amount">180.000đ</span>
+      </div>
+      <div class="price-row">
+        <span>Vệ sinh máy lạnh 2.5 HP trở lên</span>
+        <span class="price-amount">220.000đ</span>
+      </div>
+      <div class="price-row">
+        <span>Nạp gas máy lạnh (cộng thêm)</span>
+        <span class="price-amount">Báo giá thực tế</span>
+      </div>
+    </div>
+    <p class="price-note">* Giá trên chưa bao gồm phụ tùng thay thế (nếu có). Báo giá miễn phí trước khi làm.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Quy trình làm việc</h2>
+    <p class="section-sub">Đơn giản, nhanh chóng, không phiền phức</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Đặt lịch online hoặc gọi điện</h3>
+          <p>Điền form bên dưới hoặc gọi trực tiếp — chúng tôi xác nhận lịch trong 5 phút</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Kỹ thuật viên đến tận nơi</h3>
+          <p>Có mặt trong 60 phút, kiểm tra và báo giá trước khi thực hiện</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Vệ sinh sạch sẽ, nghiệm thu</h3>
+          <p>Làm xong chạy thử máy, đảm bảo máy lạnh tốt trước khi rời đi</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Thanh toán và bảo hành</h3>
+          <p>Thanh toán sau khi hài lòng, bảo hành 30 ngày kể từ ngày làm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="form">
+  <h2 class="section-title">Đặt Lịch Ngay</h2>
+  <p class="section-sub">Điền thông tin bên dưới — chúng tôi gọi xác nhận trong 5 phút</p>
+
+  <div class="form-box">
+    <form id="contactForm">
+      <div class="form-group">
+        <label>Họ và tên *</label>
+        <input type="text" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="form-group">
+        <label>Số điện thoại *</label>
+        <input type="tel" placeholder="0909 XXX XXX" required>
+      </div>
+      <div class="form-group">
+        <label>Địa chỉ tại Biên Hòa *</label>
+        <input type="text" placeholder="Số nhà, tên đường, phường..." required>
+      </div>
+      <div class="form-group">
+        <label>Loại máy lạnh</label>
+        <select>
+          <option value="">-- Chọn công suất --</option>
+          <option>1 HP</option>
+          <option>1.5 HP</option>
+          <option>2 HP</option>
+          <option>2.5 HP trở lên</option>
+          <option>Không biết</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Ghi chú thêm</label>
+        <textarea placeholder="Máy kém lạnh, hôi mốc, tiếng ồn lớn..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Đặt Lịch Miễn Phí Ngay</button>
+      <p class="form-guarantee">🔒 Thông tin của bạn được bảo mật tuyệt đối</p>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div style="font-size:48px;margin-bottom:12px">✅</div>
+      <h3>Đặt lịch thành công!</h3>
+      <p>Chúng tôi sẽ gọi xác nhận cho bạn trong vòng 5 phút.<br>Cảm ơn bạn đã tin tưởng dịch vụ của chúng tôi!</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Vệ Sinh Máy Lạnh Biên Hòa • Hotline: 0568528937</p>
+  <p style="margin-top:6px">Phục vụ toàn khu vực Biên Hòa, Đồng Nai</p>
+</footer>
+
+<a href="#form" class="floating-cta">📞 Đặt Lịch Ngay</a>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+
+  document.querySelectorAll('a[href="#form"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
